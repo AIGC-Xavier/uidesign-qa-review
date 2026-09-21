@@ -1,5 +1,5 @@
 ---
-name: UIdesign-qa-review
+name: uidesign-qa-review
 description: "对照设计稿检查开发页面、截图或前端源码的视觉还原情况，输出附证据、代码位置和修正方向的问题清单。适用于 UI 走查、Figma 与实现比对、前端样式审查和设计验收；支持设计稿与源码仓库、页面链接或实现截图组合输入。"
 ---
 
