@@ -1,4 +1,4 @@
-# UIdesign-qa-review
+# uidesign-qa-review
 
 **AIGC-Xavier · UI 设计走查技能**
 
@@ -48,24 +48,36 @@
 5. **整理报告**：按影响排序，提供证据和代码定位，列明阻塞与未覆盖范围。
 6. **修复复查**：沿用问题编号，记录已修正、仍存在或无法复测的结果。
 
-## 安装
+## 快速安装
 
-下载本仓库，将包含 `SKILL.md` 的文件夹放到技能目录。Codex 默认路径为：
+先安装 Git，再在终端执行对应命令（适用于 macOS、Linux 或 Windows WSL）。
 
-```text
-~/.codex/skills/UIdesign-qa-review/SKILL.md
+### Codex
+
+```bash
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
+git clone https://github.com/AIGC-Xavier/uidesign-qa-review.git "${CODEX_HOME:-$HOME/.codex}/skills/uidesign-qa-review"
 ```
 
-如果设置了 `CODEX_HOME`，使用该目录下的 `skills/UIdesign-qa-review`。已有同名技能时先比较内容，避免覆盖本地修改。
+安装后新建对话，输入 `$uidesign-qa-review` 并附上设计稿、页面链接或源码路径。
 
-本项目保留 `UIdesign-qa-review` 的名称和大小写。若所用工具要求全小写标识，请同步调整目录名和 `SKILL.md` 中的 `name`。
+### Claude Code
+
+```bash
+mkdir -p "$HOME/.claude/skills"
+git clone https://github.com/AIGC-Xavier/uidesign-qa-review.git "$HOME/.claude/skills/uidesign-qa-review"
+```
+
+安装后输入 `/uidesign-qa-review` 并附上走查材料。技能会在本机的各个项目中可用，详见 [Claude Code 技能文档](https://code.claude.com/docs/en/skills)。
+
+下方示例采用 Codex 的 `$uidesign-qa-review` 写法；在 Claude Code 中改用 `/uidesign-qa-review` 即可。
 
 ## 使用示例
 
 ### 截图对照
 
 ```text
-使用 $UIdesign-qa-review 对比这两张截图。
+使用 $uidesign-qa-review 对比这两张截图。
 第一张是设计稿，第二张是开发页面。忽略文案和图片内容差异，
 检查颜色、字号、间距、圆角与布局，输出开发可执行的问题清单。
 ```
@@ -73,7 +85,7 @@
 ### 页面与多状态走查
 
 ```text
-使用 $UIdesign-qa-review 检查这个测试页面与 Figma 设计。
+使用 $uidesign-qa-review 检查这个测试页面与 Figma 设计。
 对齐视口与主题，覆盖默认、已输入、加载、错误及浮层状态。
 记录无法触发的状态，并输出带内嵌证据图、可直接转发的 PDF 报告。
 ```
@@ -81,7 +93,7 @@
 ### 前端源码与设计稿比对
 
 ```text
-使用 $UIdesign-qa-review 检查当前项目中指定页面或组件的源码，
+使用 $uidesign-qa-review 检查当前项目中指定页面或组件的源码，
 与我提供的 Figma 设计稿进行比对。
 定位实际使用的组件、样式、主题变量及响应式规则，
 检查布局、按钮尺寸、输入框高度、字体、间距、圆角和状态样式。
@@ -93,7 +105,7 @@
 ### 修复后复查
 
 ```text
-使用 $UIdesign-qa-review 复查这批已修复问题。
+使用 $uidesign-qa-review 复查这批已修复问题。
 对照原问题编号、设计稿和当前源码，检查相关页面及浅深色状态，
 记录哪些已修正、哪些仍存在、哪些缺少测试条件。
 ```
